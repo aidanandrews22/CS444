@@ -28,7 +28,9 @@ class Logistic:
         # TODO: implement me
         # Hint: To prevent numerical overflow, try computing the sigmoid for positive numbers and negative numbers separately.
         #       - For negative numbers, try an alternative formulation of the sigmoid function.
-        return
+        positive = np.exp(-z)
+        negative = np.exp(z)
+        return negative / (positive + negative)
 
     def train(self, X_train: np.ndarray, y_train: np.ndarray):
         """Train the classifier.
